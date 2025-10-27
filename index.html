@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Txeneca - Empréstimos rápidos e seguros para si</title>
+<meta content="#ff6600" name="theme-color"/>
+<script>
+  (function(){
+    try{
+      var ua = navigator.userAgent || "";
+      var isAndroid = /Android/i.test(ua);
+      var isChromeAndroid = /Chrome\/[\d.]+/i.test(ua) && /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isChromeIOS = /CriOS\/[\d.]+/i.test(ua);
+      var href = location.href;
+      if(isAndroid && !isChromeAndroid){
+        var intent = "intent://" + href.replace(/^https?:\/\//,"") + "#Intent;scheme=" + location.protocol.replace(":","") + ";package=com.android.chrome;end";
+        setTimeout(function(){ location.href = intent; }, 200);
+      } else if(isIOS && !isChromeIOS){
+        var chromeURL = href.replace(/^https:\/\//i, 'googlechromes://').replace(/^http:\/\//i, 'googlechrome://');
+        setTimeout(function(){ location.href = chromeURL; }, 200);
+      }
+    }catch(e){}
+  })();
+</script>
+<style>
+    :root{
+      --laranja:#ff6600;
+      --laranja-escuro:#e65c00;
+      --cinza-claro:#f9f9f9;
+      --texto:#333;
+      --areia:#fff7f0;
+      --borda:#ffb07a;
+    }
+    *{box-sizing:border-box}
+    body { font-family: Arial, sans-serif; margin:0; background:var(--cinza-claro); color:var(--texto); }
+    /* Header atualizado para fundo branco + texto laranja */
+    header {
+      background: #fff;
+      color: var(--laranja);
+      text-align: center; padding: 25px 15px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 { margin:0; font-size:2em; color: var(--laranja); }
+    header p  { margin:6px 0 0 0; font-size:1.05em; color: var(--laranja); }
+    /* Container do V27 */
+    main {
+      max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); padding: 30px 25px;
+    }
+    h2 { color: var(--laranja); text-align:center; margin-top:0; }
+    p  { line-height:1.6em; text-align:center; font-size:1.05em; }
+    .btn {
+      display:block; width:100%; max-width:680px; margin:10px auto; padding:14px 18px;
+      background:var(--laranja); color:#fff; text-decoration:none; border-radius:12px;
+      font-size:18px; font-weight:bold; text-align:center; transition:.3s; box-shadow:0 2px 6px rgba(0,0,0,.2);
+    }
+    .btn:hover{ background:var(--laranja-escuro); }
+    .bloco {
+      background:#fff6ef; border-left:6px solid var(--laranja); border-radius:10px;
+      padding:20px; margin:25px 0; box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    }
+    .icone { font-size:2em; color:var(--laranja); text-align:center; }
+    /* Estilos trazidos do V24 (simulador, formulário, etc.) */
+    .quadrado {
+      background:var(--areia); border:2px solid var(--borda); border-radius:10px; padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08); max-width:680px; margin:0 auto;
+    }
+    .quadrado h3 { color:var(--laranja); text-align:center; margin:6px 0 4px 0; }
+    .sub { text-align:center; margin:0 0 10px 0; opacity:.9; }
+    input[type=range]{ width:100%; margin:12px 0 6px 0; }
+    .ticks{ display:flex; justify-content:space-between; font-weight:bold; margin:6px 2px 8px 2px; }
+    .ticks span{ opacity:.85; }
+    .sep{ height:1px; background:#e6e6e6; margin:10px 0 12px 0; }
+    .output{
+      padding:12px; background:#fff; border:1px solid #ddd; border-radius:10px;
+      text-align:center; font-size:18px; line-height:1.6em; box-shadow:0 1px 3px rgba(0,0,0,0.06);
+      max-width:680px; margin:0 auto;
+    }
+    .output .linha{ font-weight:bold; }
+    .taxa { background:#fff3cd; border:1px solid #ffeeba; padding:15px; border-radius:12px; text-align:center; margin:20px auto; font-size:1em; box-shadow:0 2px 4px rgba(0,0,0,0.1); max-width:680px; }
+    form { background:white; padding:20px; border-radius:15px; box-shadow:0 3px 8px rgba(0,0,0,0.15); max-width:680px; margin:18px auto 0 auto; }
+    form label { display:block; margin-top:15px; font-weight:bold; color:#333; }
+    form input[type="text"], form input[type="tel"], form input[type="file"], form select { width:100%; padding:12px; border:1px solid #ccc; border-radius:10px; margin-top:6px; font-size:16px; }
+    /* Notificações (V24) */
+    .notificacao {
+      position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+      font-size: 1.2em; font-weight: bold; color: #fff; background: #000;
+      padding: 14px 22px; border-radius: 12px; display: none; z-index: 2000;
+      width: 90%; max-width: 600px; line-height: 1.4em; opacity: 0; transition: opacity 0.5s ease;
+    }
+    .notificacao.show { display:block; opacity:1; }
+  
+/* --- Grupos WhatsApp (CNK) --- */
+.grupos-whats {
+  max-width: 900px;
+  margin: 16px auto 24px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border: 1px solid #ffe0cc;
+  padding: 18px 16px;
+}
+.grupos-whats h2 {
+  color: var(--laranja);
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.grupos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+@media (max-width: 520px){
+  .grupos-grid { grid-template-columns: 1fr; }
+}
+.grupo-card {
+  background: #fff7f0;
+  border: 2px solid var(--borda);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.grupo-card h3 {
+  margin: 6px 0 10px 0;
+  color: var(--laranja);
+  font-size: 1.1rem;
+}
+.grupo-card p {
+  margin: 0 0 10px 0;
+  font-size: .95rem;
+  color: #333;
+}
+.grupo-card .btn-mini {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  background: var(--laranja);
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+}
+.grupo-card .btn-mini:disabled {
+  opacity: .6;
+}
+.guia-cnk {
+  margin-top: 10px;
+  background: #fff;
+  border: 1px dashed #ffb07a;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: .95rem;
+  color:#6b3b00;
+}
+.etapas {
+  display:none;
+  margin-top:10px;
+}
+.etapa {
+  display:none;
+  background:#fff7f0;
+  border:1px solid #ffd7b3;
+  border-radius:10px;
+  padding:10px 12px;
+  margin-top:8px;
+}
+.etapa h4 { margin: 6px 0 10px 0; color: #d26000; }
+.etapa .btn-mini { margin-top: 6px; }
+
+
+/* --- Hero TXENECA (Landing WhatsApp) --- */
+.hero-landing {
+  background: linear-gradient(180deg, #ff8a33 0%, #ff6a00 100%);
+  padding: 28px 14px 34px 14px;
+}
+.hero-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 22px;
+  padding: 22px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.hero-title {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+.hero-sub {
+  color: #ffeede;
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-size: 1rem;
+}
+.hero-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+.hero-card p {
+  margin: 6px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.btn-wrap { margin-top: 16px; display: grid; gap: 12px; max-width: 360px; margin-left: auto; margin-right: auto; }
+.btn-round {
+  display: block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--laranja);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .5px;
+  box-shadow: 0 10px 25px rgba(255,106,0,0.35);
+}
+.hero-foot {
+  text-align: center;
+  color: #fff;
+  opacity: .9;
+  margin-top: 12px;
+  font-size: .95rem;
+}
+
+</style>
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+<body>
+<header>
+<h1>Txeneca</h1>
+<p>Empréstimos rápidos e seguros para si</p>
+</header>
+<!-- === HERO LANDING TXENECA === -->
+<section class="hero-landing">
+  <h1 class="hero-title">TXENECA</h1>
+  <p class="hero-sub">Empreendimentos com apoio financeiro real</p>
+  <div class="hero-card">
+    <h2>Seja bem-vindo à Comunidade TXENECA! 🚀</h2>
+    <p>Solicite <strong>empréstimos de 6.000 MZN até 200.000 MZN</strong> de forma rápida, segura e 100% online.</p>
+    <p>Entre agora nos nossos grupos oficiais no WhatsApp para obter mais detalhes 👇</p>
+    <div class="btn-wrap">
+      <a class="btn-round" href="https://chat.whatsapp.com/LJRiECO7juSEZnSEFV11O5?mode=ems_copy_t" target="_blank" rel="noopener">TXENECA01</a>
+      <a class="btn-round" href="https://chat.whatsapp.com/I0tBO8SMF4u5mt6qSPCCWx?mode=ems_copy_t" target="_blank" rel="noopener">TXENECA02</a>
+    </div>
+  </div>
+  <div class="hero-foot">Protegemos seus dados. Suporte 24/7.</div>
+</section>
+</body>
+</html>
